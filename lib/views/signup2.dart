@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../views/registration_primary.dart';
+import '../views/signup3.dart';
 import '../models/user_model.dart';
 
-class Home extends StatelessWidget {
+class signup2 extends StatelessWidget {
   usermodel newuser;
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Registration(user: newuser)));
+                          builder: (context) => signup3(user: newuser)));
                 },
                 child: Text(
                   'Fleet Owner',
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Registration(user: newuser)));
+                          builder: (context) => signup3(user: newuser)));
                 },
                 child: Text(
                   'Transporter',
@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Registration(user: newuser)));
+                          builder: (context) => signup3(user: newuser)));
                 },
                 child: Text(
                   'Freight Owner',

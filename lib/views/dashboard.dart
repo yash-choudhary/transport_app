@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:transport_app/services/auth_service.dart';
+import '../widgets/provider_widget.dart';
 
 class Dash extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -15,7 +18,7 @@ class Dash extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Text('Options'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
@@ -26,8 +29,16 @@ class Dash extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
-              onTap: () {
+              title: Text('SignOut'),
+              onTap: ()async{
+                try{
+                  AuthService auth = Provider.of(context).auth;
+                  Navigator.pop(context);
+                  await auth.signOut();
+                  print("Signed Out!");
+                }catch(e){
+                  print(e);
+                }
               },
             ),
           ],
