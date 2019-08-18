@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-//import 'views/signup1.dart';
-import 'views/signup2.dart';
-import 'views/signup3.dart';
-import 'views/login_signup.dart';
 import 'views/dashboard.dart';
+import 'views/splash_screen.dart';
+import 'views/signup_details.dart';
 import 'views/first_view.dart';
-import 'views/singn_all_view.dart';
+import 'views/sign_all_view.dart';
 import 'package:transport_app/services/auth_service.dart';
 import 'widgets/provider_widget.dart';
 
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
     return Provider(
       auth: AuthService(),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Transport App',
         theme: ThemeData(
           // Define the default brightness and colors.
           brightness: Brightness.light,
@@ -41,14 +39,15 @@ class MyApp extends StatelessWidget {
             body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
           ),
         ),
-        home: HomeController(),
+        home: SplashScreen(),
         //initialRoute: '/',
         routes: <String, WidgetBuilder>{
           '/signUp': (BuildContext context) => SignUpView(authFormType: AuthFormType.signUp),
           '/signIn': (BuildContext context) => SignUpView(authFormType: AuthFormType.signIn),
           '/home': (BuildContext context) => HomeController(),
-          '/signup2': (BuildContext context)=> signup2(),
-          '/signup3': (BuildContext context)=> signup3(),
+          '/signup2': (BuildContext context)=> SignUpView2(authFormType: AuthFormType2.signUp2,),
+          '/signup3': (BuildContext context)=> SignUpView2(authFormType: AuthFormType2.signUp3,),
+          '/splash': (BuildContext context)=> SplashScreen(),
         },
 //        {
 //          // When navigating to the "/" route, build the FirstScreen widget.

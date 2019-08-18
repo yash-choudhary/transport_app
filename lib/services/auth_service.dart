@@ -33,8 +33,15 @@ class AuthService{
     return _firebaseAuth.sendPasswordResetEmail(email: email);
   }
 
-  getCurrentUser(){
-    return _firebaseAuth.currentUser();
+   Future<String> getCurrentUID() async {
+    final FirebaseUser user = await _firebaseAuth.currentUser();
+    final uid = user.uid;
+    return uid;
+  }
+  Future<String> getCurrentEmail() async {
+    final FirebaseUser user = await _firebaseAuth.currentUser();
+    final email = user.email;
+    return email;
   }
 
 }
@@ -48,6 +55,74 @@ class EmailValidator{
     }
   }
 }
+class NameValidator{
+  static String validate(String value){
+    if(value.isEmpty){
+      return "Company name can't be empty.";
+    }else{
+      return null;
+    }
+  }
+}
+class CinValidator{
+  static String validate(String value){
+//    Pattern pattern =
+//        r'/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/';
+//    RegExp regex = new RegExp(pattern);
+//    if (!regex.hasMatch(value))
+//      return 'Enter Valid Phone Number';
+//    else
+//      return null;
+    if(value.isEmpty){
+      return "CIN can't be empty.";
+    }else if(value.length >= 1/*21*/){
+      return null;
+    }else{
+      return "Invalid CIN";
+    }
+  }
+}
+class GstinValidator{
+  static String validate(String value){
+    if(value.isEmpty){
+      return "GSTIN can't be empty.";
+    }else if(value.length >= 1/*15*/){
+      return null;
+    }else{
+      return "Invalid GSTIN";
+    }
+  }
+}
+class AddressValidator{
+  static String validate(String value){
+    if(value.isEmpty){
+      return "Address can't be empty.";
+    }else{
+      return null;
+    }
+  }
+}
+class ContactnoValidator{
+  static String validate(String value){
+    if(value.isEmpty){
+      return "Contact Number can't be empty.";
+    }else{
+      return null;
+    }
+  }
+}
+class PincodeValidator{
+  static String validate(String value){
+    if(value.isEmpty){
+      return "Pincode can't be empty.";
+    }else if(value.length >= 1){
+      return null;
+    }else{
+      return "Invalid Pincode";
+    }
+  }
+}
+
 
 class PasswordValidator{
   static String validate(String value){
@@ -55,6 +130,8 @@ class PasswordValidator{
       return "Password can't be empty.";
     }else if(value.length <6){
       return "Password should be longer than 6 characters.";
+    }else{
+      return null;
     }
   }
 }

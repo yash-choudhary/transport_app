@@ -1,15 +1,25 @@
 class usermodel{
-  int type=1;
+  static  int type;
+  static String category;
   // 1:fleet owner
   // 2:transporter
   // 3:freight owner
-  String name;
-  String cin;
-  String gstin;
-  int contact;
-  String address;
-  int pincode;
+  static  String name;
+  static  String cin;
+  static  String gstin;
+  static  int contact;
+  static  String address;
+  static  int pincode;
 
-  usermodel(this.type,this.name,this.cin,this.gstin,this.contact,this.address,this.pincode);
+  static setData(itype,iname,icategory,icin,igstin,icontact,iaddress,ipincode){
+    type = itype;
+    name = iname;
+    category = icategory;
+    cin = icin;
+    gstin = igstin;
+    contact = icontact;
+    address = iaddress;
+    pincode = ipincode;
+  }
 
 }

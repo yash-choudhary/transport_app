@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../widgets/provider_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 final primaryColor = Colors.blue;
 
-enum AuthFormType { signIn, signUp, reset }
+enum AuthFormType { signIn, signUp,signUp2,signUp3, reset }
 
 class SignUpView extends StatefulWidget {
   final AuthFormType authFormType;
@@ -106,7 +107,10 @@ class _SignUpViewState extends State<SignUpView> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    buildHeaderText(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: buildHeaderText(),
+                    ),
                     SizedBox(height: _height * 0.12),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0.8, 0.0, 0.8, 0.0),
@@ -186,7 +190,7 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 
-  Text buildHeaderText() {
+  AutoSizeText buildHeaderText() {
     String _headerText;
     if (authFormType == AuthFormType.signUp) {
       _headerText = "Create New Account";
@@ -195,7 +199,7 @@ class _SignUpViewState extends State<SignUpView> {
     } else {
       _headerText = "Sign In";
     }
-    return Text(
+    return AutoSizeText(
       _headerText,
       maxLines: 1,
       textAlign: TextAlign.center,
