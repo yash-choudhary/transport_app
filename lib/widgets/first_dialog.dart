@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-class CustomDialog extends StatelessWidget {
+class FirstDialog extends StatelessWidget {
   final primaryColor = Colors.blue;
   final grayColor = const Color(0xFF939393);
 
@@ -12,7 +12,7 @@ class CustomDialog extends StatelessWidget {
       secondaryButtonText,
       secondaryButtonRoute;
 
-  CustomDialog(
+  FirstDialog(
       {@required this.title,
         @required this.description,
         @required this.primaryButtonText,

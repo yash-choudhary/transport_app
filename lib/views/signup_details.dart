@@ -26,7 +26,7 @@ class _SignUpView2State extends State<SignUpView2> {
 
   _SignUpView2State({this.authFormType});
 
-  final formKey = GlobalKey<FormState>();
+  static GlobalKey<FormState> formKey = new GlobalKey<FormState>();
   String name_controller,cin_controller,gstin_controller,contactno_controller,address_controller,pincode_controller, _warning, _category;
   int _type;
   final db = Firestore.instance;

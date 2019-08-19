@@ -64,6 +64,17 @@ class NameValidator{
     }
   }
 }
+
+class FriendidValidator{
+  static String validate(String value){
+    if(value.isEmpty){
+      return "UserID can't be empty.";
+    }else{
+      return null;
+    }
+  }
+}
+
 class CinValidator{
   static String validate(String value){
 //    Pattern pattern =

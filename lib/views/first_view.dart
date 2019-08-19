@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import '../widgets/custom_dialog.dart';
+import '../widgets/first_dialog.dart';
 
 class FirstView extends StatelessWidget {
   final primaryColor = Colors.blue;
@@ -55,7 +55,7 @@ class FirstView extends StatelessWidget {
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => CustomDialog(
+                      builder: (BuildContext context) => FirstDialog(
                         title: "Would you like to create a free account?",
                         description:
                         "With an account, your data will be securely saved, allowing you to access it from multiple devices.",
