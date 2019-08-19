@@ -12,7 +12,7 @@ class AddDialog extends StatelessWidget {
       primaryButtonText,
       primaryButtonRoute,
       secondaryButtonText,
-      secondaryButtonRoute;
+      secondaryButtonRoute,uid;
 
   //static formKey1 = GlobalKey<FormState>();
   static GlobalKey<FormState> formKey1 = new GlobalKey<FormState>();
@@ -29,7 +29,8 @@ class AddDialog extends StatelessWidget {
   }
 
   AddDialog(
-      {@required this.title,
+      {@required this.uid,
+        @required this.title,
       @required this.description,
       @required this.primaryButtonText,
       @required this.primaryButtonRoute,
@@ -123,7 +124,7 @@ class AddDialog extends StatelessWidget {
                       ),
                       onPressed: () {
                         if (validate()) {
-                          var opt = SendRequest.checkIfLikedOrNot(friendid);
+                          var opt = SendRequest.checkIfExistOrNot(friendid,uid,context);
                           print(opt);
                         }
                       },

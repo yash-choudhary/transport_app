@@ -6,6 +6,7 @@ import 'views/first_view.dart';
 import 'views/sign_all_view.dart';
 import 'package:transport_app/services/auth_service.dart';
 import 'widgets/provider_widget.dart';
+import 'views/requests.dart';
 
 
 void main() => runApp(MyApp());
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
           '/signup2': (BuildContext context)=> SignUpView2(authFormType: AuthFormType2.signUp2,),
           '/signup3': (BuildContext context)=> SignUpView2(authFormType: AuthFormType2.signUp3,),
           '/splash': (BuildContext context)=> SplashScreen(),
+          '/requests': (BuildContext context)=> RequestsPage(),
         },
 //        {
 //          // When navigating to the "/" route, build the FirstScreen widget.

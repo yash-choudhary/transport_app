@@ -1,5 +1,6 @@
 class usermodel{
   static  int type;
+  static String uid;
   static String category;
   // 1:fleet owner
   // 2:transporter

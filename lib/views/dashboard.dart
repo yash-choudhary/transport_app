@@ -11,6 +11,7 @@ import '../widgets/add_dialog.dart';
 //import 'package:esys_flutter_share/esys_flutter_share.dart';
 import 'package:share/share.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import '../models/user_model.dart';
 
 class Dash extends StatefulWidget {
   @override
@@ -20,8 +21,10 @@ class Dash extends StatefulWidget {
 class _DashState extends State<Dash> {
   static String uid, email;
   // ignore: missing_return
+
   Future<String> get_uid() async {
     uid = await Provider.of(context).auth.getCurrentUID();
+    usermodel.uid = uid;
     email = await Provider.of(context).auth.getCurrentEmail();
   }
 
@@ -167,6 +170,12 @@ Widget drawer(
           onTap: () {},
         ),
         ListTile(
+          title: Text('Connection Requests'),
+          onTap: () {
+            Navigator.pushReplacementNamed(context, '/requests');
+          },
+        ),
+        ListTile(
           title: Text('SignOut'),
           onTap: () async {
             try {
@@ -217,6 +226,7 @@ List childbuttons(BuildContext context) {
           showDialog(
             context: context,
             builder: (BuildContext context) => AddDialog(
+              uid: _DashState.uid,
               title: "Add Transporter",
               description: "Increase your business network!",
               primaryButtonText: "Add",
