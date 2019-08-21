@@ -123,9 +123,56 @@ class SendRequest{
 }
 
 
-class AcceptRequests{
-  final _uid = usermodel.uid;
+class AcceptRequests {
+  static final _uid = usermodel.uid;
 
+
+  static acceptreq(String friendid) async {
+    try {
+      print("inside accept");
+      DocumentSnapshot fds = await Firestore.instance.collection("users")
+          .document(friendid.toString().trim())
+          .get();
+      DocumentSnapshot uds = await Firestore.instance.collection("users")
+          .document(_uid.toString().trim())
+          .get();
+      DocumentSnapshot fds_del = await Firestore.instance.collection("users")
+          .document(friendid.toString().trim()).collection("friendrequests")
+          .document(_uid)
+          .get();
+      DocumentSnapshot uds_del = await Firestore.instance.collection("users")
+          .document(_uid.toString().trim()).collection("friendrequests")
+          .document(
+          friendid)
+          .get();
+      // ignore: unnecessary_statements
+      if(await fds.exists){
+        await Firestore.instance.collection("users").document(friendid)
+            .collection("friends").document(_uid)
+            .setData({
+          'name': uds['name'].toString(),
+          'category': uds['category'].toString(),
+          'uid': _uid.toString()
+        });
+        await Firestore.instance.collection("users").document(_uid)
+            .collection("friends").document(friendid)
+            .setData({
+          'name': fds['name'].toString(),
+          'category': fds['category'].toString(),
+          'uid': friendid.toString()
+        });
+        await fds_del.reference.delete();
+        await uds_del.reference.delete();
+        // ignore: unnecessary_statements
+      }else{
+        await fds_del.reference.delete();
+        await uds_del.reference.delete();
+      };
+      print("exiting accept");
+    }catch(e){
+      print(e);
+    }
+  }
 
 
 }

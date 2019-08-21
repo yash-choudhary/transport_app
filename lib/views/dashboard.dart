@@ -81,7 +81,7 @@ class _DashState extends State<Dash> {
                                     0) /*Last parameter is opacity value*/,
                                 parentButtonBackground: Colors.redAccent,
                                 orientation: UnicornOrientation.VERTICAL,
-                                parentButton: Icon(Icons.add),
+                                parentButton: Icon(Icons.menu),
                                 childButtons: childbuttons(context)),
                           ));
                     }
@@ -167,7 +167,9 @@ Widget drawer(
         ),
         ListTile(
           title: Text('Connections'),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushReplacementNamed(context, '/connections');
+          },
         ),
         ListTile(
           title: Text('Connection Requests'),
