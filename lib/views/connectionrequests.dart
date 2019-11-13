@@ -6,6 +6,7 @@ import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import '../models/user_model.dart';
 import '../services/conn_mgmt.dart';
+import '../themedata/color.dart';
 
 class RequestsPage extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _RequestsPageState extends State<RequestsPage> {
 
   circularIndicator() {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Mycolor.primaryCustom,
       body: Container(
         child: Center(
           child: CircularProgressIndicator(
@@ -54,7 +55,7 @@ class _RequestsPageState extends State<RequestsPage> {
             // ignore: missing_return
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
-                circularIndicator();
+                return circularIndicator();
               } else {
                 return ListView.builder(
                   shrinkWrap: true,

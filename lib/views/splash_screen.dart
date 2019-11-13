@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import '../themedata/color.dart';
+
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -23,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
         fit: StackFit.expand,
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration: BoxDecoration(color: Mycolor.primaryCustom),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,

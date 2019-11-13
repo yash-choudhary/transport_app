@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:transport_app/services/auth_service.dart';
+import '../themedata/color.dart';
 
 class Provider extends InheritedWidget{
   final AuthService auth;

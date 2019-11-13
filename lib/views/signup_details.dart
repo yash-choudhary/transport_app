@@ -8,6 +8,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dashboard.dart';
 import '../widgets/provider_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../themedata/color.dart';
+
 
 enum AuthFormType2 {signUp2,signUp3}
 
@@ -124,7 +126,7 @@ class _SignUpView2State extends State<SignUpView2> {
                 padding: const EdgeInsets.all(15.0),
                 child: Text(
                   'Company Type',
-                  style: TextStyle(fontSize: 30.0, color: Colors.blue),
+                  style: TextStyle(fontSize: 30.0, color: Mycolor.primaryCustom),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -145,7 +147,7 @@ class _SignUpView2State extends State<SignUpView2> {
                     },
                     child: Text(
                       'Fleet Owner',
-                      style: TextStyle(fontSize: 18.0, color: Colors.blue),
+                      style: TextStyle(fontSize: 18.0, color: Mycolor.primaryCustom),
                     ),
                   ),
                 ),
@@ -166,7 +168,7 @@ class _SignUpView2State extends State<SignUpView2> {
                     },
                     child: Text(
                       'Transporter',
-                      style: TextStyle(fontSize: 18.0, color: Colors.blue),
+                      style: TextStyle(fontSize: 18.0, color: Mycolor.primaryCustom),
                     ),
                   ),
                 ),
@@ -187,7 +189,7 @@ class _SignUpView2State extends State<SignUpView2> {
                     },
                     child: Text(
                       'Freight Owner',
-                      style: TextStyle(fontSize: 18.0, color: Colors.blue),
+                      style: TextStyle(fontSize: 18.0, color: Mycolor.primaryCustom),
                     ),
                   ),
                 ),
@@ -367,7 +369,7 @@ class _SignUpView2State extends State<SignUpView2> {
                             child: RaisedButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
-                              color: Colors.blue,
+                              color: Mycolor.primaryCustom,
                               child: new Text('Submit',style: TextStyle(fontSize: 18.0, color: Colors.white),),
                               onPressed: () async {
                                 submit();

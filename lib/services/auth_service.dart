@@ -38,6 +38,13 @@ class AuthService{
     final uid = user.uid;
     return uid;
   }
+
+//  Future<String> getCurrentType() async {
+//    final FirebaseUser user = await _firebaseAuth.currentUser();
+//    final uid = user.uid;
+//    return uid;
+//  }
+
   Future<String> getCurrentEmail() async {
     final FirebaseUser user = await _firebaseAuth.currentUser();
     final email = user.email;

@@ -8,12 +8,14 @@ import 'package:transport_app/services/auth_service.dart';
 import 'widgets/provider_widget.dart';
 import 'views/connectionrequests.dart';
 import 'views/connections.dart';
+import 'themedata/color.dart';
 
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return Provider(
@@ -23,10 +25,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           // Define the default brightness and colors.
           brightness: Brightness.light,
-          primarySwatch: Colors.blue,
+          primarySwatch: Mycolor.primaryCustom,
 //        primaryColor: Color(0xff20B2AA),
 //        accentColor: Color(0xff2C393F),
-          buttonColor: Colors.blue,
+          buttonColor: Mycolor.primaryCustom,
 //        backgroundColor: Color(0xffE5E5E5),
 
           //backgroundColor: Color(0xffEDEDED),

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../widgets/provider_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import '../themedata/color.dart';
 
-final primaryColor = Colors.blue;
+
+final primaryColor = Mycolor.primaryCustom;
 
 enum AuthFormType { signIn, signUp,signUp2,signUp3, reset }
 
@@ -203,7 +205,7 @@ class _SignUpViewState extends State<SignUpView> {
       _headerText,
       maxLines: 1,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.blue, fontSize: 50.0),
+      style: TextStyle(color: Mycolor.primaryCustom, fontSize: 50.0),
     );
   }
 

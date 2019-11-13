@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../themedata/color.dart';
 
 Widget txtfield(String name, String _controller, bool autofocus,bool obsc, Key key){
   return Padding(

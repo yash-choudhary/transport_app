@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import '../services/conn_mgmt.dart';
 import '../services/auth_service.dart';
+import '../themedata/color.dart';
 
 class AddDialog extends StatelessWidget {
-  final primaryColor = Colors.blue;
+  final primaryColor = Mycolor.primaryCustom;
   final grayColor = const Color(0xFF939393);
 
   final String title,

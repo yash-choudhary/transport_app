@@ -7,6 +7,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import '../models/user_model.dart';
 import '../services/conn_mgmt.dart';
 import '../views/profileview.dart';
+import '../themedata/color.dart';
+
 
 class ConnectionsPage extends StatefulWidget {
   @override

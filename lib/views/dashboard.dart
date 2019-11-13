@@ -12,6 +12,8 @@ import '../widgets/add_dialog.dart';
 import 'package:share/share.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import '../models/user_model.dart';
+import '../themedata/color.dart';
+
 
 class Dash extends StatefulWidget {
   @override
@@ -30,7 +32,7 @@ class _DashState extends State<Dash> {
 
   circularIndicator() {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Mycolor.primaryCustom,
       body: Container(
         child: Center(
           child: CircularProgressIndicator(
@@ -83,6 +85,7 @@ class _DashState extends State<Dash> {
                                 orientation: UnicornOrientation.VERTICAL,
                                 parentButton: Icon(Icons.menu),
                                 childButtons: childbuttons(context)),
+
                           ));
                     }
                   });
@@ -104,7 +107,7 @@ Widget drawer(
       children: <Widget>[
         DrawerHeader(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: Mycolor.primaryCustom,
           ),
           child: Row(
             children: [
@@ -153,7 +156,7 @@ Widget drawer(
                           child: Text(
                             email,
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: Mycolor.primaryCustom,
                             ),
                           ),
                         ),
